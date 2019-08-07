@@ -1,7 +1,7 @@
 //if user clicks on current location button
 $(document).ready(function () {
 
-  $("#map").hide();
+  // $("#map").hide();
   $('#current-location, #input-location, #reset').click(function () {
     if (this.id == 'current-location') {
       currentLocation();
