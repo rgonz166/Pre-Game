@@ -17,7 +17,7 @@ slider.on('input',function(){
 
 $('.yelp-search').on('click',function(e){
     e.preventDefault();
-    var b = $('.businesses');
+    var b = $('#businesses');
     var term = $('#input-result').val().trim();
 
 
@@ -43,6 +43,15 @@ $('.yelp-search').on('click',function(e){
             success: function(data){
                 console.log(data);
                 for(var i =0;i<data.businesses.length;i++){
+
+
+
+
+
+
+
+
+
                     var name = $('<p>');
                     name.text(data.businesses[i].name);
                     var pic = $('<img>');
@@ -57,7 +66,7 @@ $('.yelp-search').on('click',function(e){
 })
 
 function loadData(){
-    var b = $('.businesses');
+    var b = $('#businesses');
     var address = $('<p>');
     var pic = $('<img>');
     // address
