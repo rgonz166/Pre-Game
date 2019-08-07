@@ -53,7 +53,7 @@ $('.yelp-search').on('click',function(e){
 
                     var imgHolder = $("<img>");
                     imgHolder.attr({
-                        "src" : data.businesses[i].img_url,
+                        "src" : (data.businesses[i].image_url),
                         "class" : "card-img"
                     });
                     imgHolder.appendTo(cardLeft);
@@ -62,23 +62,24 @@ $('.yelp-search').on('click',function(e){
                     cardRight.addClass("col-md-8");
                     cardRight.appendTo(mainCard);
 
-                    
+                    var cardBody = $("<div>");
+                    cardBody.addClass("card-body");
+                    cardBody.appendTo(cardRight);
 
+                    //card title w/ venue title
 
+                    //card text w/ venue summary
 
+                    //add rating and price
 
-
-
-
-
-                    var name = $('<p>');
-                    name.text(data.businesses[i].name);
-                    var pic = $('<img>');
-                    pic.attr('src', data.businesses[i].image_url);
-                    pic.attr('height', '200px');
-                    b.prepend(pic);
-                    b.prepend(name);
-                    console.log(data.businesses[i].image_url);
+                    // var name = $('<p>');
+                    // name.text(data.businesses[i].name);
+                    // var pic = $('<img>');
+                    // pic.attr('src', data.businesses[i].image_url);
+                    // pic.attr('height', '200px');
+                    // b.prepend(pic);
+                    // b.prepend(name);
+                    // console.log(data.businesses[i].image_url);
                 }
             }
         }); 
