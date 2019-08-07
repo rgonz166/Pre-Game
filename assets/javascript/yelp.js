@@ -1,12 +1,24 @@
 // Yelp api
+var slider = $('#range-slider');
+var output = $('.demo');
+output.text(slider.val());
 
+// slider.on('input',function(){
+//     console.log(this);
+    
+//     output.text(this.val());
+// })
 
 
 $('.yelp-search').on('click',function(e){
     e.preventDefault();
     var b = $('.businesses');
     var term = $('#input-result').val().trim();
+
+
+    // Query String Addons
     var termString = '&term=' + term;
+
 
     // var latitude = 32.715736;
     // var longitude = -117.161087;
