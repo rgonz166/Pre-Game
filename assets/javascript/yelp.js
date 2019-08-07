@@ -1,13 +1,18 @@
 // Yelp api
 var slider = $('#range-slider');
 var output = $('.demo');
-output.text(slider.val());
+output.text(slider.val() + " miles");
 
-// slider.on('input',function(){
-//     console.log(this);
-    
-//     output.text(this.val());
-// })
+slider.on('input',function(){
+    var sliderValue = 0;
+    sliderValue = this.value;
+    if(sliderValue == 1){
+        output.text("(<1) miles");
+    }
+    else{
+        output.text(sliderValue + " miles");
+    }
+})
 
 
 $('.yelp-search').on('click',function(e){
@@ -18,16 +23,14 @@ $('.yelp-search').on('click',function(e){
 
     // Query String Addons
     var termString = '&term=' + term;
+    var location = "&latitude=32.715736&longitude=-117.161087";
 
 
     // var latitude = 32.715736;
     // var longitude = -117.161087;
     // var yelpClientID = 'XeMH_vKd8Mm-rmj3QWBF5Q';
     var yelpApiKey = 'ssPVBtHyaqwtWyJvqHRW24qlwpitFICGorpoIHxUJR-LoKpi0StKtRRdxGXek19oPHAfXelKVbUmrceV6hur0HXUsWxZTiJ7S3BRfa9Bp-YGfAWd_ftNzrDVe-1FXXYx';
-    // // var yelpQuery = 'https://api.yelp.com/v3/businesses/search?latitude=' + latitude + '&longitude='+longitude;
-    // var yelpQuery = 'https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972';
-    
-    var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?latitude=32.715736&longitude=-117.161087&limit=10&sort_by=rating" + termString;
+    var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&limit=10&sort_by=rating" + termString + location;
 
 
         $.ajax({
