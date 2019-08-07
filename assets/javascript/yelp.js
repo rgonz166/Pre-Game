@@ -43,7 +43,26 @@ $('.yelp-search').on('click',function(e){
             success: function(data){
                 console.log(data);
                 for(var i =0;i<data.businesses.length;i++){
+                    var mainCard = $("<div>");
+                    mainCard.addClass("row no-gutters");
+                    mainCard.appendTo(b);
 
+                    var cardLeft = $("<div>");
+                    cardLeft.addClass("col-md-4");
+                    cardLeft.appendTo(mainCard);
+
+                    var imgHolder = $("<img>");
+                    imgHolder.attr({
+                        "src" : data.businesses[i].img_url,
+                        "class" : "card-img"
+                    });
+                    imgHolder.appendTo(cardLeft);
+
+                    var cardRight = $("<div>");
+                    cardRight.addClass("col-md-8");
+                    cardRight.appendTo(mainCard);
+
+                    
 
 
 
