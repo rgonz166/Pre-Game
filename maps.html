@@ -4,11 +4,15 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 100%;
+    margin-top: 50px;
+       
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -19,13 +23,34 @@
     </style>
   </head>
   <body>
+      <!-- <form>
+        Enter Location of event
+        <input type="text" id="evenLocation">
+     
+        <input type="submit" id="submit">
+      </form>  -->
 
+      <button id="current-location">Use Current Location</button>
+      <button id="input-location">Enter a Location</button>
+      <button id="reset">Restart</button>
+
+
+    <div class="foot-wrapper"></div>
     <div id="map" ></div>
-  
+    <div id="map-1" ></div>
 
+     
+    
+    
+  
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <script src="assets/javascript/googleMaps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcVj1DhyIDz72KxCdYdlyYfeYn01e_SAw&callback=initMap"
     async defer></script>
+    
     
   </body>
 </html>
