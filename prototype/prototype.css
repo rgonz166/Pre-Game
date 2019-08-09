@@ -67,11 +67,25 @@
     height: 100vh;
    
     /* Scroll Snap */
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
   }
   
   section h1 {
     font-size: 4rem;
+  }
+
+  #map {
+    height: 100%;
+
+
+   
+  }
+  
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
   }
   
   /* Section Images */
