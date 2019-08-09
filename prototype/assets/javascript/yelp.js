@@ -20,9 +20,9 @@ slider.on('input',function(){
 function coordinates(lattt, longgg){
     lA = lattt;
     lO = longgg;
-    console.log("yelp lat: " + lA);
-    console.log("yelp long: " + lO);
-
+    console.log("yelp lat: " + lA);//this is the longitude
+    console.log("yelp long: " + lO);//this is the long
+console.log("here");
 }
 
 $('.yelp-search').on('click',function(e){
