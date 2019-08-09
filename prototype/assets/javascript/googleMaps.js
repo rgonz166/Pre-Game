@@ -3,7 +3,7 @@
 
 $(document).ready(function () {
 
-  // $("#map").hide();
+  $("#map").hide();
   $('#current-location, #input-location, #reset').click(function () {
     if (this.id == 'current-location') {
       currentLocation();
@@ -37,7 +37,8 @@ function showPosition(position) {
   console.log(typeof (lattt));
   console.log("lat: " + lattt);
   console.log("long: " + longgg);
-  initMap(lattt, longgg)
+  initMap(lattt, longgg);
+  coordinates(lattt,longgg);
 
   // x.innerHTML = "Latitude: " + position.coords.latitude + 
   // "<br>Longitude: " + position.coords.longitude;
@@ -67,13 +68,13 @@ function initMap(lattt, longgg) { //works sometimes
 
 //search a location
 function inputLocation() { //for the search barb
-  $("body").append("<form>" + "Enter Location:" + "<input id=address placeholder='Enter a Location'><button id=submit>Search</button></form>");
+  $(".search-bar").append("<form class = form-1>" + "Enter Location:" + "<input id=address placeholder='Enter a Location'><button id=submit>Search</button></form>");
   $("#current-location").hide();
   $("#input-location").hide();
 
   $('#submit').click(function (e) {
     e.preventDefault();
-    $("form").hide();
+    $(".form-1").hide();
     var userLocation = $("#address").val();
     console.log(userLocation);
     var geocoder = new google.maps.Geocoder();
@@ -88,6 +89,7 @@ function inputLocation() { //for the search barb
         var long_1 = results[0].geometry.location.lng();
         console.log("latitude of entered location: " + lat_1 + " longitute: " + long_1);
         enterMap(lat_1, long_1);
+        coordinates(lat_1,long_1);
 
       }
     });
