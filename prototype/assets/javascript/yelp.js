@@ -1,6 +1,9 @@
 // Yelp api
 var slider = $('#range-slider');
 var output = $('.demo');
+var lA = 0;
+var lO = 0;
+
 output.text(slider.val() + " miles");
 
 slider.on('input',function(){
@@ -14,6 +17,13 @@ slider.on('input',function(){
     }
 })
 
+function coordinates(lattt, longgg){
+    lA = lattt;
+    lO = longgg;
+    console.log("yelp lat: " + lA);
+    console.log("yelp long: " + lO);
+
+}
 
 $('.yelp-search').on('click',function(e){
     e.preventDefault();
@@ -23,7 +33,7 @@ $('.yelp-search').on('click',function(e){
 
     // Query String Addons
     var termString = '&term=' + term;
-    var location = "&latitude=32.715736&longitude=-117.161087";
+    var location = "&latitude=" + lA +"&longitude=" + lO;
 
 
     // var latitude = 32.715736;
@@ -63,3 +73,5 @@ function loadData(){
     // address
     
 }
+
+
