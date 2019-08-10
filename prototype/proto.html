@@ -1,84 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pre-Game 🍺</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="prototype.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript"> 
+        $(window).on('scroll', function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('black');
+            }
+            else
+            {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+    
 </head>
-
 <body>
-    <div class="container">
-        <!-- <nav class="navbar">
+        <!-- <div class="container">
+                <nav class="navbar" style="background-color: rgba(255, 255, 255, 0);">
+                    <a class="navbar-brand" href="#"></a>
+                    <img src="images/pregame logo.png" alt="logo" style="height: 10rem;">
                     <ul>
-                        <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#service">Service</a></li>
                         <li><a href="#contact">Contact</a></li>
                       </ul>
-                    </nav> -->
-        <section id="home">
-            <h1>Are You Ready to get F*cked Up!?!</h1>
-            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
-            <button id="current-location">Use Current Location</button>
-            <button id="input-location">Enter a Location</button>
-            <div class="search-bar"></div>
-            <button id="reset">Restart</button>
-
-
-            <form>
-
-
-                <label for="input-result">What are you looking for?</label>
-                <input type="search" id="input-result">
-                <button class="yelp-search" type="submit">Submit</button>
-
-                <!-- Slider -->
-                <br>
-                <label for="range-slider">Range (Miles)</label>
-                <br>
-                <input type="range" name="range" id="range-slider" value="13" min="1" max="25">
-                <div class="demo"></div>
-            </form>
-
-
-        </section>
-
-
-        <div class="businesses"></div><!--Where the listing of all the bars-->
-   
-
-       
-
-            <div id="map"></div><!--Where the map is going to be stored-->
+                      <li>
+                            <a class="nav-link" href="#about">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#service">Contact</a>
+                          </li>
+                          <li class="nav-item">
+                                <a class="nav-link" href="#contact">Service</a>
+                            </li>
+                        </ul>
+                    </nav>
+                     -->
+                <nav>
+                    <div class="logo">
+                        <img src="images/pregame logo.png" alt="logo" style="height: 10rem;">
+                    </div>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <!-- <li><a href="#service">Service</a></li> -->
+                        <li><a href="#contact">Contact</a></li>            
+                    </ul>
+                </nav>
+                <!-- <section class="sec1"></section>
+                <section class="sec2"></section>
+                <section class="sec3"></section>
+                <section class="sec4"></section>
+                <section class="sec5"></section> -->
+                    
+                
+                
+                
+                <section id="home">
+                    <div class="box">
+                <h1>“Alcohol may be man’s worst enemy, but the bible says love your enemy.”</h1>
+                <p class="ex1" dir="auto"><bdo>- Frank Sinatra</bdo></p>
+                    <p class="lead">
+                        <span class="input">
+                          <input type="text" placeholder="Where to?">
+                        </span>
+                    </p>
+                    </div>
+                
+                <!-- <a href="#about" type="button">Start</a> -->
+                </section>
+                <section id="about">
+                        <div class="box">
+                    <h1>About</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                        </div>
+                </section>
+                <!-- <section id="service">
+                    <h1>Service</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                </section> -->
+                <section id="contact">
+                        <div class="box">
+                    <h1>Contact</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                        </div>
+                </section>
+              </div>
+              
         
-
-
-        <section id="about">
-            <h1>About</h1>
-            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
-        </section>
-        <section id="service">
-            <h1>Service</h1>
-            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
-        </section>
-        <section id="contact">
-            <h1>Contact</h1>
-            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
-        </section>
-    </div>
-
-
-    <!-- <script src="prototype.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    
-    <script src="assets/javascript/googleMaps.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcVj1DhyIDz72KxCdYdlyYfeYn01e_SAw&callback=initMap"
-        async defer></script>
-        <script src="assets/javascript/yelp.js"></script>
+            
+            
+              <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+              <script type="text/javascript">
+                  $(window).on('scroll', function(){
+                      if($(window).scrollTop()){
+                          $('nav').addClass('black');
+                      }
+                      else
+                      {
+                          $('nav').removeClass('black');
+                      }
+                  })
+              </script>
+               -->
 </body>
-
 </html>
