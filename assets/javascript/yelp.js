@@ -63,8 +63,8 @@ function drawList(data) {
     data.businesses.forEach(function(business, i) {
         
         console.log('business', business)
-        var ratingSprite = "./assets/images/star.png";
-        var priceSprite = "./assets/images/price.png";
+        var ratingSprite = "./assets/images/star1.png";
+        var priceSprite = "./assets/images/price1.png";
         var busRating = Math.floor(business.rating)
         var busPrice = business.price;
         var priceVar;
@@ -103,13 +103,11 @@ function drawList(data) {
         cardBodyRight.addClass("card-body text-right");
         cardBodyRight.appendTo(cardRight);
 
-        //card title w/ venue title
         var cardTitle = $("<h5>");
         cardTitle.addClass("card-title");
         cardTitle.text(business.name);
         cardTitle.appendTo(cardBodyMiddle);
 
-        //card text w/ venue summary
         var cardRating = $("<div>");
         var ratingAmount = $("<span>");
         var ratingHeader = $("<h6>Rating: </h6>");
@@ -165,7 +163,6 @@ function drawList(data) {
             
 
 
-            //add rating and price
     });
 
 }
