@@ -189,7 +189,7 @@
     height: 100vh;
    
     /* Scroll Snap */
-    /* scroll-snap-align: center; */
+     scroll-snap-align: center; 
   }
   
   section h1 {
