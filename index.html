@@ -1,29 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Pre-Game</title>
-        <link rel= "stylesheet" type= "text/css" herf="assets/css/style.css"> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg==" crossorigin="anonymous">
-
-       
-
-    </head>
-
-    <body>
-            <ul class="menu align-center">
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                    <li><a href="#">Four</a></li>
-                  </ul>
-
-        <!-- <div class="callout secondary">
-            <h5>This is a secondary callout</h5>
-            <p>It has an easy to override visual style, and is appropriately subdued.</p>
-            <a href="#">It's dangerous to go alone, take this.</a>
-        </div> -->
-
-    </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pre-Game 🍺</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript"> 
+        $(window).on('scroll', function(){
+            if($(window).scrollTop()){
+                $('nav').addClass('black');
+            }
+            else
+            {
+                $('nav').removeClass('black');
+            }
+        })
+    </script>
+    
+</head>
+<body>
+        <!-- <div class="container">
+                <nav class="navbar" style="background-color: rgba(255, 255, 255, 0);">
+                    <a class="navbar-brand" href="#"></a>
+                    <img src="images/pregame logo.png" alt="logo" style="height: 10rem;">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                      </ul>
+                      <li>
+                            <a class="nav-link" href="#about">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#service">Contact</a>
+                          </li>
+                          <li class="nav-item">
+                                <a class="nav-link" href="#contact">Service</a>
+                            </li>
+                        </ul>
+                    </nav>
+                     -->
+                <nav>
+                    <div class="logo">
+                        <img src="assets/images/pregame logo.png" alt="logo" style="height: 10rem;">
+                    </div>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <!-- <li><a href="#service">Service</a></li> -->
+                        <li><a href="#contact">Contact</a></li>            
+                    </ul>
+                </nav>
+                <!-- <section class="sec1"></section>
+                <section class="sec2"></section>
+                <section class="sec3"></section>
+                <section class="sec4"></section>
+                <section class="sec5"></section> -->
+                    
+                
+                
+                
+                <section id="home">
+                    <div class="box">
+                <h1>“Alcohol may be man’s worst enemy, but the bible says love your enemy.”</h1>
+                <p class="ex1" dir="auto"><bdo>- Frank Sinatra</bdo></p>
+                    <p class="lead">
+                        <span class="input">
+                          <input type="text" placeholder="Where to?">
+                        </span>
+                    </p>
+                    </div>
+                
+                <!-- <a href="#about" type="button">Start</a> -->
+                </section>
+                <section id="about">
+                        <div class="box">
+                    <h1>About</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                        </div>
+                </section>
+                <!-- <section id="service">
+                    <h1>Service</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                </section> -->
+                <section id="contact">
+                        <div class="box">
+                    <h1>Contact</h1>
+                    <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+                        </div>
+                </section>
+              </div>
+              
+        
+            
+            
+              <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+              <script type="text/javascript">
+                  $(window).on('scroll', function(){
+                      if($(window).scrollTop()){
+                          $('nav').addClass('black');
+                      }
+                      else
+                      {
+                          $('nav').removeClass('black');
+                      }
+                  })
+              </script>
+               -->
+</body>
 </html>
