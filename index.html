@@ -45,20 +45,34 @@
             <div class="row align-items-center mt-5">
 
                 <div class="col">
-                    <button type="button" class="btn btn-outline-info" style="padding: 0 1rem">
+                    <!-- <button type="button" class="btn btn-outline-info" style="padding: 0 1rem">
                         <span><img src="./assets/images/locationWhite.png" style="height:4rem;"></span>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="col">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id="input-search" class="form-control mr-sm-2" type="search" placeholder="Search"
+                        aria-label="Search">
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-outline-info">GO</button>
+                    <button id="input-location" type="submit" class="btn btn-outline-info">GO</button>
                 </div>
             </div>
 
         </form>
     </main>
+
+
+    <div container="flex">
+        <section id="business-info" class="row text-white mt-5">
+            <div class="col-sm-6 card-body">
+                <div id="businesses"></div>
+            </div>
+            <div class="col-sm-6 card-body">
+                <div id="map"></div>
+            </div>
+        </section>
+    </div>
+
 
 
 

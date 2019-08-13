@@ -80,7 +80,8 @@ function drawList(data) {
         imgHolder.attr({
             "src": (business.image_url),
             "class": "card-img",
-            "height": "100px"
+            "height": "100px",
+            "max-width": "100px"
         });
         imgHolder.appendTo(cardLeft);
 
