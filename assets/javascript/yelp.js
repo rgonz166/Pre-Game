@@ -52,6 +52,7 @@ function barsSearch(){
             b.empty();
             drawList(data);
             showPosition(lA,lO);
+            $("input-search").val("");
         }
     });
 }
