@@ -31,14 +31,14 @@ function getLocation() {
   }
 }
 
-function setLocation(p){
+function setLocation(p) {
   lat = p.coords.latitude;
   lon = p.coords.longitude;
-  runCode(lat,lon);
+  runCode(lat, lon);
 }
 
-function runCode(la, lo){
-  coordinates(la,lo);
+function runCode(la, lo) {
+  coordinates(la, lo);
   barsSearch();
 }
 
@@ -60,7 +60,131 @@ function initMap(lattt, longgg) { //works sometimes
   };
   map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,
-    zoom: 12
+    zoom: 12,
+    styles: [{
+        elementType: 'geometry',
+        stylers: [{
+          color: '#242f3e'
+        }]
+      },
+      {
+        elementType: 'labels.text.stroke',
+        stylers: [{
+          color: '#242f3e'
+        }]
+      },
+      {
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#746855'
+        }]
+      },
+      {
+        featureType: 'administrative.locality',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#d59563'
+        }]
+      },
+      {
+        featureType: 'poi',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#d59563'
+        }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'geometry',
+        stylers: [{
+          color: '#263c3f'
+        }]
+      },
+      {
+        featureType: 'poi.park',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#6b9a76'
+        }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry',
+        stylers: [{
+          color: '#38414e'
+        }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'geometry.stroke',
+        stylers: [{
+          color: '#212a37'
+        }]
+      },
+      {
+        featureType: 'road',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#9ca5b3'
+        }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry',
+        stylers: [{
+          color: '#746855'
+        }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'geometry.stroke',
+        stylers: [{
+          color: '#1f2835'
+        }]
+      },
+      {
+        featureType: 'road.highway',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#f3d19c'
+        }]
+      },
+      {
+        featureType: 'transit',
+        elementType: 'geometry',
+        stylers: [{
+          color: '#2f3948'
+        }]
+      },
+      {
+        featureType: 'transit.station',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#d59563'
+        }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'geometry',
+        stylers: [{
+          color: '#17263c'
+        }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.fill',
+        stylers: [{
+          color: '#515c6d'
+        }]
+      },
+      {
+        featureType: 'water',
+        elementType: 'labels.text.stroke',
+        stylers: [{
+          color: '#17263c'
+        }]
+      }
+    ]
   });
 
   var marker = new google.maps.Marker({
@@ -77,48 +201,48 @@ function initMap(lattt, longgg) { //works sometimes
 
 //search a location
 function inputLocation() { //for the search barb
-    // e.preventDefault();
-    // $(".form-1").hide();
-    
-    var userLocation = $('#input-search').val();
-    var geocoder = new google.maps.Geocoder();
-    var address = userLocation;
+  // e.preventDefault();
+  // $(".form-1").hide();
 
-    geocoder.geocode({
-      'address': address
-    }, function (results, status) {
+  var userLocation = $('#input-search').val();
+  var geocoder = new google.maps.Geocoder();
+  var address = userLocation;
 
-      if (status == google.maps.GeocoderStatus.OK) {
-        var lat_1 = results[0].geometry.location.lat();
-        var long_1 = results[0].geometry.location.lng();
+  geocoder.geocode({
+    'address': address
+  }, function (results, status) {
 
-        runCode(lat_1,long_1);
+    if (status == google.maps.GeocoderStatus.OK) {
+      var lat_1 = results[0].geometry.location.lat();
+      var long_1 = results[0].geometry.location.lng();
 
-      }
-    });
-  }
+      runCode(lat_1, long_1);
 
-    function enterMap(lat_1, long_1) { //takes in the lattitude and longitude
-      $("#map").show();
-      var myLatLng = {
-        lat: lat_1,
-        lng: long_1
-      };
-
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: myLatLng,
-        zoom: 12
-      });
-
-
-      var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        label: 'A',
-        title: 'Hello World!'
-      });
-      moreMarkers();
     }
+  });
+}
+
+function enterMap(lat_1, long_1) { //takes in the lattitude and longitude
+  $("#map").show();
+  var myLatLng = {
+    lat: lat_1,
+    lng: long_1
+  };
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,
+    zoom: 12
+  });
+
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    label: 'A',
+    title: 'Hello World!'
+  });
+  moreMarkers();
+}
 
 
 function moreMarkers() {
@@ -133,14 +257,14 @@ function moreMarkers() {
     //   lat:locs[i],
     //   lng:
     // }
-    var n = i+1
+    var n = i + 1
     var num = n.toString();
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locs[i][0], locs[i][1]),
       map: map,
-      label:num,
-      shape:shape
-      
+      label: num,
+      shape: shape
+
     });
   }
 }
