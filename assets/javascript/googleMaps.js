@@ -14,6 +14,7 @@ $(document).ready(function () {
     } else if (this.id == 'input-location') {
       getLocation();
       inputLocation();
+      $("input-search").val("");
     } else if (this.id == 'reset') {
       reset();
     }
