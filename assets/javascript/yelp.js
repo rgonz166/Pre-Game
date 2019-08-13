@@ -102,7 +102,7 @@ function drawList(data) {
 
         var cardTitle = $("<h5>");
         cardTitle.addClass("card-title");
-        cardTitle.text(business.name);
+        cardTitle.text((i+1) + ". " + business.name);
         cardTitle.appendTo(cardBodyMiddle);
 
         var cardRating = $("<div>");
