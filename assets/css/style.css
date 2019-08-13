@@ -1,184 +1,202 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption|Russo+One|Vast+Shadow&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-  } 
-   */
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #333;
-    color: #fff;
-    height: 100vh;
-    line-height: 1.6;
-    overflow: hidden; 
-    margin:0;
-    padding:0; 
+  margin: 0;
+  padding: 0;
+}
 
-  }
+*/ body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 
-  .box{
-    position: relative;
-    max-width: 600px;
-    padding: 50px;
-    background: rgba(255,255,255,.5);
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  }
-  
-  .container {
-    width: 100%;
-    height: 100%;
-    /* CSS Smooth Scroll */
-    overflow-y: scroll; 
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-  }
-  .input {
-    position: relative;
-    font-size: 1.5em;
-    background: linear-gradient(21deg, #10abff, #1beabd);
-    padding: 3px;
-    display: inline-block;
-    border-radius: 9999em;
-    box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff;
-  }
-  .input *:not(span) {
-    position: relative;
-    display: inherit;
-    border-radius: inherit;
-    margin: 0;
-    border: none;
-    outline: none;
-    padding: 0 .325em;
-    z-index: 1;
-  }
-  
-  .lead {
-    font-size: 1.5rem;
-  } 
+}
 
-  nav {
-    position: fixed;
-    top:0;
-    left:0;
-    widows: 100%;
-    height: 100px;
-    padding: 10px 100px;
-    box-sizing: border-box;
-    transition: .5s;
-  }
-  nav.black {
-    background: rgba(0,0,0,.8);
-    height: 80px;
-    padding: 10px 50px;
-  }
-  nav .logo {
-    float: left;
-  }
-  nav.logo img {
-    height: 80px;
-    transition: .5s;
-  }
-  nav.black .logo img {
-    height: 60px;
-  }
-  nav ul {
-    float: right;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  nav ul li {
-    list-style: none;
-  }
-  nav ul li a {
-    line-height: 80px;
-    color: white;
-    padding: 5px 20px;
-    font-family: 'Russo One', sans-serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: .3s;
-  }
+.box {
+  position: relative;
+  max-width: 600px;
+  padding: 50px;
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
 
-  nav.black ul li a {
-    color:#fff;
-    line-height: 60px;
-  }
+.container {
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
 
-  nav ul li a.active,
-  nav ul li a:hover
-  {
-    color: rgb(255, 255, 255);
-    background: rgba(223, 183, 6, 0.685);
-  }
+.input {
+  position: relative;
+  font-size: 1.5em;
+  background: linear-gradient(21deg, #10abff, #1beabd);
+  padding: 3px;
+  display: inline-block;
+  border-radius: 9999em;
+  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+}
 
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100vh;
-  
-    /* Scroll Snap */
-    scroll-snap-align: center;
-  }
+.input *:not(span) {
+  position: relative;
+  display: inherit;
+  border-radius: inherit;
+  margin: 0;
+  border: none;
+  outline: none;
+  padding: 0 .325em;
+  z-index: 1;
+}
 
-  .rounded-btn{
-    border-radius: 50%;
-    background: none;
-    box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff; 
-    border: none;
-  }
+.lead {
+  font-size: 1.5rem;
+}
 
-  .round-btn{
-    background: none;
-    width: 140px;
-    border: none;
-    color: rgb(250, 248, 248);
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin: 4px 2px;
-    
-    border-radius: 20px;
-    box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd,  -3px 3px 30px #10abff;
-  }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  widows: 100%;
+  height: 100px;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  transition: .5s;
+}
 
-  section h1 {
-    font-size: 4rem;
-    color: rgba(8, 8, 7, 0.877);
-    font-family:'PT Serif Caption', serif;
-    text-transform: uppercase;
-    font-size: 30px;
-  }
+nav.black {
+  background: rgba(0, 0, 0, .8);
+  height: 80px;
+  padding: 10px 50px;
+}
 
-  #map {
-    height: 80%;
-    width: 40vw;
+nav .logo {
+  float: left;
+}
 
-  }
-  
-  /* Optional: Makes the sample page fill the window. */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Section Images */
-  section#home {
-    background: url('https://images.theconversation.com/files/202745/original/file-20180122-110106-1gruok4.jpg') no-repeat center center/cover; 
-  }
-  
-  section#business-info {
-    background: url('https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
-  }
+nav.logo img {
+  height: 80px;
+  transition: .5s;
+}
 
-  section#contact {
-    background: url('https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat center center/cover;
-  } 
+nav.black .logo img {
+  height: 60px;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  line-height: 80px;
+  color: white;
+  padding: 5px 20px;
+  font-family: 'Russo One', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+nav.black ul li a {
+  color: #fff;
+  line-height: 60px;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: rgb(255, 255, 255);
+  background: rgba(223, 183, 6, 0.685);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+
+  /* Scroll Snap */
+  scroll-snap-align: center;
+}
+
+.rounded-btn {
+  border-radius: 50%;
+  background: none;
+  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+  border: none;
+}
+
+.round-btn {
+  background: none;
+  width: 140px;
+  border: none;
+  color: rgb(250, 248, 248);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+}
+
+section h1 {
+  font-size: 4rem;
+  color: rgba(8, 8, 7, 0.877);
+  font-family: 'PT Serif Caption', serif;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#map {
+  height: 80%;
+  width: 40vw;
+
+}
+
+/* #home {
+  height: 400px;
+} */
+
+#nav-custom{
+  z-index: 120;
+  width: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section Images */
+section#home {
+  background: url('https://images.theconversation.com/files/202745/original/file-20180122-110106-1gruok4.jpg') no-repeat center center/cover;
+}
+
+section#business-info {
+  background: url('https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;
+}
+
+section#contact {
+  background: url('https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260') no-repeat center center/cover;
+}
