@@ -1,58 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Serif+Caption|Russo+One|Vast+Shadow&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
+body {
+  background-color: #000000;
 }
 
-*/ body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #333;
-  color: #fff;
-  height: 100vh;
-  line-height: 1.6;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-
-}
-
-.box {
-  position: relative;
-  max-width: 600px;
-  padding: 50px;
-  background: rgba(255, 255, 255, .5);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-}
-
-.container {
+.picgradient {
   width: 100%;
-  height: 100%;
-}
-
-.input {
-  position: relative;
-  font-size: 1.5em;
-  background: linear-gradient(21deg, #10abff, #1beabd);
-  padding: 3px;
   display: inline-block;
-  border-radius: 9999em;
-  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 1)));
 }
 
-.input *:not(span) {
+.picgradient img {
   position: relative;
-  display: inherit;
-  border-radius: inherit;
-  margin: 0;
-  border: none;
-  outline: none;
-  padding: 0 .325em;
-  z-index: 1;
-}
-
-.lead {
-  font-size: 1.5rem;
+  z-index: -1;
+  display: block;
 }
 
 nav {
@@ -61,6 +22,8 @@ nav {
   left: 0;
   widows: 100%;
   height: 100px;
+  z-index: 120;
+  width: 100%;
   padding: 10px 100px;
   box-sizing: border-box;
   transition: .5s;
@@ -117,83 +80,68 @@ nav ul li a:hover {
   background: rgba(223, 183, 6, 0.685);
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  height: 100vh;
+#top {
+  z-index: 5;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 
-  /* Scroll Snap */
-  scroll-snap-align: center;
+  font-family: "PT Serif Caption", serif;
 }
 
-.rounded-btn {
-  border-radius: 50%;
-  background: none;
-  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
-  border: none;
-}
-
-.round-btn {
-  background: none;
-  width: 140px;
-  border: none;
-  color: rgb(250, 248, 248);
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-
-  border-radius: 20px;
-  box-shadow: inset 0 0 0 3px turquoise, 0 0 0 4px turquoise, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
-}
-
-section h1 {
-  font-size: 4rem;
-  color: rgba(8, 8, 7, 0.877);
-  font-family: 'PT Serif Caption', serif;
-  text-transform: uppercase;
-  font-size: 30px;
+#black {
+  background-color: #000000;
 }
 
 #map {
   min-height: 1000px;
-  width: 40vw;
-
-}
-
-/* #home {
-  height: 400px;
-} */
-
-#nav-custom{
-  z-index: 120;
   width: 100%;
+
 }
 
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #top{
+    margin-top: -50px;
+  }
 }
 
-#business-info{
-  background-color: #000000;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #top{
+    margin-top: -200px;
+  }
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #top{
+    margin-top: -300px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #top{
+    margin-top: -700px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #top{
+    margin-top: -800px;
+  }
+}
+
+
 
 /* Section Images */
-section#home {
+/* section#home {
   background: url('https://images.theconversation.com/files/202745/original/file-20180122-110106-1gruok4.jpg') no-repeat center center/cover;
   background-color: #000000;
 
-}
+} */
 
 /* section#business-info {
   background: url('https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center center/cover;

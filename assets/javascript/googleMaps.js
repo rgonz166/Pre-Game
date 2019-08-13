@@ -12,6 +12,7 @@ $(document).ready(function () {
       getLocation();
 
     } else if (this.id == 'input-location') {
+      getLocation();
       inputLocation();
     } else if (this.id == 'reset') {
       reset();

@@ -23,11 +23,11 @@ function barsSearch(){
     var b = $('#businesses');
 
     // Query String Addons
-    var termString = '&term=bars';
+    var termString = $("#input-search").val().trim();    ;
     var location = "&latitude=" + lA +"&longitude=" + lO;
 
     var yelpApiKey = 'ssPVBtHyaqwtWyJvqHRW24qlwpitFICGorpoIHxUJR-LoKpi0StKtRRdxGXek19oPHAfXelKVbUmrceV6hur0HXUsWxZTiJ7S3BRfa9Bp-YGfAWd_ftNzrDVe-1FXXYx';
-    var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&limit=10&sort_by=rating" + termString + location;
+    var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&limit=10&sort_by=rating&term=" + termString + location;
 
 
     $.ajax({
@@ -52,6 +52,7 @@ function barsSearch(){
             b.empty();
             drawList(data);
             showPosition(lA,lO);
+            $("input-search").val("");
         }
     });
 }
@@ -80,7 +81,8 @@ function drawList(data) {
         imgHolder.attr({
             "src": (business.image_url),
             "class": "card-img",
-            "height": "100px"
+            "height": "100px",
+            "max-width": "100px"
         });
         imgHolder.appendTo(cardLeft);
 
