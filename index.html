@@ -14,45 +14,51 @@
             <img src="assets/images/logoWhite.png" alt="logo" style="height: 10rem;">
         </div>
         <ul>
-            <li><a href="#about">About</a></li>
+            <li><a href="#business-info">About</a></li>
             <li><a href="#contact">Contact</a></li>            
         </ul>
     </nav>
-        <section id="home">
+    <divl class="container">
+        <section id="home" class="row">
             <div class="box">
                 <h1>“Alcohol may be man’s worst enemy, but the bible says love your enemy.”</h1>
                 <p class="ex1" dir="auto"><bdo>- Frank Sinatra</bdo></p>
                 <p class="lead"> 
-                <button id="current-location" class="rounded-btn" style="width:5rem">
-                    <span><img src="assets/images/locationWhite.png" alt="location-icon" style="height: 3em;"></span>
-                </button>
-                <br>
-                <form>
-                    <div class="search-bar"></div>
-                    <span class="input">
-                        <input type="text" placeholder="Where to?">
-                    </span>
-                    </p>
-                    <button class="input-location round-btn p-2" type="submit">Submit</button>
-                </form>
+                    <button id="current-location" class="rounded-btn" style="width:5rem">
+                        <span><img src="assets/images/locationWhite.png" alt="location-icon" style="height: 3em;"></span>
+                    </button>
+                    <br>
+                    <form>
+                        <input type="text" class="search-bar input" id="input-search" placeholder="Where to?">
+                        <br>
+                        <button id="input-location" class="round-btn p-2" type="submit">Submit</button>
+                    </form>
+                </p>
+                    
+                
             </div>
         </section>
-        <div class="businesses"></div>
-        <div id="map"></div>
-        <section id="about">
-            <div class="box">
-                <h1>About</h1>
-                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
+        <section id="business-info" class="row">
+            <div class="col-6">
+                <div id="businesses"></div>
+            </div>
+            <div class="col-6">
+                <div id="map"></div>
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="row">
             <div class="box">
                 <h1>Contact</h1>
                 <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
             </div>
         </section>
+    </divl>
+    
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcVj1DhyIDz72KxCdYdlyYfeYn01e_SAw" async defer></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/googleMaps.js"></script>
+    <script src="assets/javascript/yelp.js"></script>
 </body>
 </html>

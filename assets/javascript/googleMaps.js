@@ -1,16 +1,17 @@
 //if user clicks on current location button
-
+var lat = 0;
+var lon = 0;
 
 $(document).ready(function () {
 
   // $("#map").hide();
-  $('#current-location, #input-location, #reset').click(function () {
+  $('#current-location, #input-location').click(function (e) {
+    e.preventDefault();
     if (this.id == 'current-location') {
-      currentLocation();
+      // currentLocation();
       getLocation();
 
     } else if (this.id == 'input-location') {
-      $("#map").hide();
       inputLocation();
     } else if (this.id == 'reset') {
       reset();
@@ -26,21 +27,30 @@ var map;
 //get currentlocation
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(setLocation);
   }
 }
 
-function showPosition(position) {
+function setLocation(p){
+  lat = p.coords.latitude;
+  lon = p.coords.longitude;
+  runCode(lat,lon);
+}
 
-  lattt = position.coords.latitude;
-  longgg = position.coords.longitude;
-  console.log(typeof (lattt));
-  console.log("lat: " + lattt);
-  console.log("long: " + longgg);
-  initMap(lattt, longgg)
+function runCode(la, lo){
+  coordinates(la,lo);
+  barsSearch();
+}
 
-  // x.innerHTML = "Latitude: " + position.coords.latitude + 
-  // "<br>Longitude: " + position.coords.longitude;
+function showPosition(latit, longit) {
+
+  lattt = latit;
+  longgg = longit;
+  // console.log(typeof (lattt));
+  // console.log("lat: " + lattt);
+  // console.log("long: " + longgg);
+  initMap(lattt, longgg);
+
 }
 
 function initMap(lattt, longgg) { //works sometimes 
@@ -67,15 +77,10 @@ function initMap(lattt, longgg) { //works sometimes
 
 //search a location
 function inputLocation() { //for the search barb
-  $("body").append("<form>" + "Enter Location:" + "<input id=address placeholder='Enter a Location'><button id=submit>Search</button></form>");
-  $("#current-location").hide();
-  $("#input-location").hide();
-
-  $('#submit').click(function (e) {
-    e.preventDefault();
-    $("form").hide();
-    var userLocation = $("#address").val();
-    console.log(userLocation);
+    // e.preventDefault();
+    // $(".form-1").hide();
+    
+    var userLocation = $('#input-search').val();
     var geocoder = new google.maps.Geocoder();
     var address = userLocation;
 
@@ -86,11 +91,12 @@ function inputLocation() { //for the search barb
       if (status == google.maps.GeocoderStatus.OK) {
         var lat_1 = results[0].geometry.location.lat();
         var long_1 = results[0].geometry.location.lng();
-        console.log("latitude of entered location: " + lat_1 + " longitute: " + long_1);
-        enterMap(lat_1, long_1);
+
+        runCode(lat_1,long_1);
 
       }
     });
+  }
 
     function enterMap(lat_1, long_1) { //takes in the lattitude and longitude
       $("#map").show();
@@ -114,28 +120,19 @@ function inputLocation() { //for the search barb
       moreMarkers();
     }
 
-  });
-
-}
 
 function moreMarkers() {
-  var locs = [
-    ["32.833237", "-117.166919"],
-    ["32.776754", "-117.252317"],
-    ["32.784096", "-117.070938"]
-  ];
+  var locs = storeLocations;
   var shape = {
     coords: [1, 1, 1, 20, 18, 20, 18, 1],
     type: 'poly'
   };
 
   for (var i = 0; i < locs.length; i++) {
-    console.log("here" + i);
     // var mylat ={
     //   lat:locs[i],
     //   lng:
     // }
-    console.log(locs[i]);
     var n = i+1
     var num = n.toString();
     marker = new google.maps.Marker({

@@ -1,33 +1,31 @@
 // Yelp api
-var slider = $('#range-slider');
 var output = $('.demo');
-output.text(slider.val() + " miles");
+var lA = 0;
+var lO = 0;
+var storeLocations = [];
 
-slider.on('input', function () {
-    var sliderValue = 0;
-    sliderValue = this.value;
-    if (sliderValue == 1) {
-        output.text("(<1) miles");
-    } else {
-        output.text(sliderValue + " miles");
-    }
-})
+// slider.on('input', function () {
+//     var sliderValue = 0;
+//     sliderValue = this.value;
+//     if (sliderValue == 1) {
+//         output.text("(<1) miles");
+//     } else {
+//         output.text(sliderValue + " miles");
+//     }
+// })
 
+function coordinates(lattt, longgg){//this is called on googleMaps.js 
+    lA = lattt;
+    lO = longgg;
+}
 
-$('.yelp-search').on('click', function (e) {
-    e.preventDefault();
+function barsSearch(){
     var b = $('#businesses');
-    var term = $('#input-result').val().trim();
-
 
     // Query String Addons
-    var termString = '&term=' + term;
-    var location = "&latitude=32.715736&longitude=-117.161087";
+    var termString = '&term=bars';
+    var location = "&latitude=" + lA +"&longitude=" + lO;
 
-
-    // var latitude = 32.715736;
-    // var longitude = -117.161087;
-    // var yelpClientID = 'XeMH_vKd8Mm-rmj3QWBF5Q';
     var yelpApiKey = 'ssPVBtHyaqwtWyJvqHRW24qlwpitFICGorpoIHxUJR-LoKpi0StKtRRdxGXek19oPHAfXelKVbUmrceV6hur0HXUsWxZTiJ7S3BRfa9Bp-YGfAWd_ftNzrDVe-1FXXYx';
     var myurl = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?&limit=10&sort_by=rating" + termString + location;
 
@@ -40,23 +38,22 @@ $('.yelp-search').on('click', function (e) {
         method: 'GET',
         dataType: 'json',
         success: function (data) {
-
+            storeLocations = [];
             console.log(data);
+            for(var i =0;i<data.businesses.length;i++){
+                var tempArray = [];
+                var currentLat = data.businesses[i].coordinates.latitude;
+                var currentLong = data.businesses[i].coordinates.longitude;
 
-            $("#businesses").empty();
+                tempArray.push(currentLat);
+                tempArray.push(currentLong);
+                storeLocations.push(tempArray);
+            }
+            b.empty();
             drawList(data);
-
+            showPosition(lA,lO);
         }
-
     });
-})
-
-function loadData() {
-    var b = $('#businesses');
-    var address = $('<p>');
-    var pic = $('<img>');
-    // address
-
 }
 
 function drawList(data) {
@@ -83,7 +80,7 @@ function drawList(data) {
         imgHolder.attr({
             "src": (business.image_url),
             "class": "card-img",
-            "style": "max-height: 100px, max-width: 200px"
+            "height": "100px"
         });
         imgHolder.appendTo(cardLeft);
 
