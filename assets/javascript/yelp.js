@@ -4,15 +4,6 @@ var lA = 0;
 var lO = 0;
 var storeLocations = [];
 
-// slider.on('input', function () {
-//     var sliderValue = 0;
-//     sliderValue = this.value;
-//     if (sliderValue == 1) {
-//         output.text("(<1) miles");
-//     } else {
-//         output.text(sliderValue + " miles");
-//     }
-// })
 
 function coordinates(lattt, longgg){//this is called on googleMaps.js 
     lA = lattt;
@@ -23,7 +14,8 @@ function barsSearch(){
     var b = $('#businesses');
 
     // Query String Addons
-    var termString = $("#input-search").val().trim();    ;
+   
+    var termString = "bars"
     var location = "&latitude=" + lA +"&longitude=" + lO;
 
     var yelpApiKey = 'ssPVBtHyaqwtWyJvqHRW24qlwpitFICGorpoIHxUJR-LoKpi0StKtRRdxGXek19oPHAfXelKVbUmrceV6hur0HXUsWxZTiJ7S3BRfa9Bp-YGfAWd_ftNzrDVe-1FXXYx';

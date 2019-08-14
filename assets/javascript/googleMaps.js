@@ -12,7 +12,6 @@ $(document).ready(function () {
       getLocation();
 
     } else if (this.id == 'input-location') {
-      getLocation();
       inputLocation();
     } else if (this.id == 'reset') {
       reset();
@@ -202,8 +201,6 @@ function initMap(lattt, longgg) { //works sometimes
 
 //search a location
 function inputLocation() { //for the search barb
-  // e.preventDefault();
-  // $(".form-1").hide();
 
   var userLocation = $('#input-search').val();
   var geocoder = new google.maps.Geocoder();
