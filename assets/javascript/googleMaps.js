@@ -39,7 +39,7 @@ function setLocation(p) {
 }
 
 function runCode(la, lo) {
-  coordinates(la, lo);
+  // coordinates(la, lo);
   barsSearch();
 }
 
